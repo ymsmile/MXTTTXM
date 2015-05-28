@@ -50,5 +50,9 @@
  Centers the view to its parent view (if exists)
  */
 //- (void) centerToParent;
+/**
+ *  给UIView设置成圆形或者圆角
+ */
+- (void)setRounded;
 
 @end

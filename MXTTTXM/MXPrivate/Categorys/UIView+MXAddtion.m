@@ -156,4 +156,18 @@
 //    }
 //}
 
+- (void)setRounded {
+#if 0
+    // 设置圆形
+    self.layer.cornerRadius = self.frame.size.width / 2;
+#else
+    // 设置圆角
+    self.layer.cornerRadius = 10.0f;
+#endif
+    self.clipsToBounds = YES;
+    // 添加边缘
+    self.layer.borderWidth = 3.0f;
+    self.layer.borderColor = [UIColor greenColor].CGColor;
+}
+
 @end
