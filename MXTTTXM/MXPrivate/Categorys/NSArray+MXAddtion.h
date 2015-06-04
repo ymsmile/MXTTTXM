@@ -15,7 +15,7 @@
  *
  *  @return YES/NO
  */
-- (BOOL)isEmpty;
+//- (BOOL)isEmpty;
 
 /**
  *  判断两个数组的内容是否相同，不分顺序；如果数组里存放的是自定义的对象，那该对象需要重写isEqual:和hash方法

@@ -31,6 +31,6 @@
  *
  *  @return YES/NO
  */
-- (BOOL)isEmpty;
+//- (BOOL)isEmpty;
 
 @end

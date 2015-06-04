@@ -62,6 +62,7 @@
 		27B01B351B16FBA300F76F35 /* MXTouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B01B341B16FBA300F76F35 /* MXTouchID.m */; };
 		27B01B381B16FC2A00F76F35 /* MXConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B01B371B16FC2A00F76F35 /* MXConstants.m */; };
 		27B01B3D1B16FFD600F76F35 /* MXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B01B3C1B16FFD600F76F35 /* MXNavigationController.m */; };
+		27FEF4F31B2043E500779E7A /* NSObject+MXAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FEF4F21B2043E500779E7A /* NSObject+MXAddition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +169,8 @@
 		27B01B3A1B16FE5800F76F35 /* MXTTTXM-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MXTTTXM-Prefix.pch"; sourceTree = "<group>"; };
 		27B01B3B1B16FFD600F76F35 /* MXNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXNavigationController.h; sourceTree = "<group>"; };
 		27B01B3C1B16FFD600F76F35 /* MXNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXNavigationController.m; sourceTree = "<group>"; };
+		27FEF4F11B2043E500779E7A /* NSObject+MXAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MXAddition.h"; sourceTree = "<group>"; };
+		27FEF4F21B2043E500779E7A /* NSObject+MXAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MXAddition.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,6 +344,8 @@
 				27B01AD61B16F65000F76F35 /* UIImage+MXAddtion.m */,
 				27B01AD71B16F65000F76F35 /* UIView+MXAddtion.h */,
 				27B01AD81B16F65000F76F35 /* UIView+MXAddtion.m */,
+				27FEF4F11B2043E500779E7A /* NSObject+MXAddition.h */,
+				27FEF4F21B2043E500779E7A /* NSObject+MXAddition.m */,
 			);
 			path = Categorys;
 			sourceTree = "<group>";
@@ -563,6 +568,7 @@
 				27B01B161B16F65000F76F35 /* UIDevice+Hardware.m in Sources */,
 				27B01B021B16F65000F76F35 /* RefreshViewController.m in Sources */,
 				27B01B191B16F65000F76F35 /* MXActionSheet.m in Sources */,
+				27FEF4F31B2043E500779E7A /* NSObject+MXAddition.m in Sources */,
 				27B01B201B16F65000F76F35 /* NSDate+WQCalendarLogic.m in Sources */,
 				27B01B171B16F65000F76F35 /* UIImage+MXAddtion.m in Sources */,
 				27B01B321B16FB7C00F76F35 /* MXTools.m in Sources */,
@@ -788,6 +794,7 @@
 				27B01AA31B16F60800F76F35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27B01AA41B16F60800F76F35 /* Build configuration list for PBXNativeTarget "MXTTTXMTests" */ = {
 			isa = XCConfigurationList;
@@ -796,6 +803,7 @@
 				27B01AA61B16F60800F76F35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
