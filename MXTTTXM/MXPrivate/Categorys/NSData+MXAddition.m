@@ -1,14 +1,14 @@
 //
-//  NSData+MXAddtion.m
+//  NSData+MXAddition.m
 //  MXTTTXM
 //
 //  Created by Michael on 5/28/15.
 //  Copyright (c) 2015 MXTTTXM UPUPUP. All rights reserved.
 //
 
-#import "NSData+MXAddtion.h"
+#import "NSData+MXAddition.h"
 
-@implementation NSData (MXAddtion)
+@implementation NSData (MXAddition)
 
 - (NSDictionary *)MXDataToDict {
     NSError *parseError = nil;

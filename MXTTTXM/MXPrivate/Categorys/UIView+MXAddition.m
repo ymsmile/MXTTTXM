@@ -1,14 +1,14 @@
 //
-//  UIView+MXAddtion.m
+//  UIView+MXAddition.m
 //  MXTTTXM
 //
 //  Created by Michael on 5/28/15.
 //  Copyright (c) 2015 MXTTTXM UPUPUP. All rights reserved.
 //
 
-#import "UIView+MXAddtion.h"
+#import "UIView+MXAddition.h"
 
-@implementation UIView (MXAddtion)
+@implementation UIView (MXAddition)
 
 @dynamic x, y, width, height, origin, size;
 

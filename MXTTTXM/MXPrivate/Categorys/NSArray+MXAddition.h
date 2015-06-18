@@ -1,5 +1,5 @@
 //
-//  NSArray+MXAddtion.h
+//  NSArray+MXAddition.h
 //  MXTTTXM
 //
 //  Created by Michael on 5/28/15.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSArray (MXAddtion)
+@interface NSArray (MXAddition)
 
 /**
  *  判断数组是否为空；count为空，或者不是NSArray类型

@@ -10,12 +10,12 @@
 #define MXTTTXM_EMHeaders_h
 
 #import "Macros.h"
-#import "NSArray+MXAddtion.h"
-#import "NSData+MXAddtion.h"
-#import "NSDictionary+MXAddtion.h"
-#import "NSString+MXAddtion.h"
+#import "NSArray+MXAddition.h"
+#import "NSData+MXAddition.h"
+#import "NSDictionary+MXAddition.h"
+#import "NSString+MXAddition.h"
 #import "UIDevice+Hardware.h"
-#import "UIImage+MXAddtion.h"
-#import "UIView+MXAddtion.h"
+#import "UIImage+MXAddition.h"
+#import "UIView+MXAddition.h"
 
 #endif

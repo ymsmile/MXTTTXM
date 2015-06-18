@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 MXTTTXM UPUPUP. All rights reserved.
 //
 
-#import "NSArray+MXAddtion.h"
+#import "NSArray+MXAddition.h"
 
-@implementation NSArray (MXAddtion)
+@implementation NSArray (MXAddition)
 
 - (BOOL)isEmpty {
     if (self == nil)

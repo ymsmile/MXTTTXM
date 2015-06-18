@@ -1,5 +1,5 @@
 //
-//  NSDictionary+MXAddtion.h
+//  NSDictionary+MXAddition.h
 //  MXTTTXM
 //
 //  Created by Michael on 5/28/15.

@@ -1,5 +1,5 @@
 //
-//  UIView+MXAddtion.h
+//  UIView+MXAddition.h
 //  MXTTTXM
 //
 //  Created by Michael on 5/28/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (MXAddtion)
+@interface UIView (MXAddition)
 
 /** View的X坐标 */
 @property (nonatomic, assign) CGFloat   x;

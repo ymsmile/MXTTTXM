@@ -1,15 +1,15 @@
 //
-//  NSString+MXAddtion.m
+//  NSString+MXAddition.m
 //  MXTTTXM
 //
 //  Created by Michael on 5/28/15.
 //  Copyright (c) 2015 MXTTTXM UPUPUP. All rights reserved.
 //
 
-#import "NSString+MXAddtion.h"
+#import "NSString+MXAddition.h"
 #import <CommonCrypto/CommonDigest.h>
 
-@implementation NSString (MXAddtion)
+@implementation NSString (MXAddition)
 
 - (NSDictionary *)MXJSONStringToDict {
     if (self == nil) {

@@ -1,5 +1,5 @@
 //
-//  NSData+MXAddtion.h
+//  NSData+MXAddition.h
 //  MXTTTXM
 //
 //  Created by Michael on 5/28/15.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSData (MXAddtion)
+@interface NSData (MXAddition)
 
 /**
  *  NSData-->NSDictionary

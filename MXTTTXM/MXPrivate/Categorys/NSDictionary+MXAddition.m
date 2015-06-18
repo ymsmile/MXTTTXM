@@ -1,14 +1,14 @@
 //
-//  NSDictionary+MXAddtion.m
+//  NSDictionary+MXAddition.m
 //  MXTTTXM
 //
 //  Created by Michael on 5/28/15.
 //  Copyright (c) 2015 MXTTTXM UPUPUP. All rights reserved.
 //
 
-#import "NSDictionary+MXAddtion.h"
+#import "NSDictionary+MXAddition.h"
 
-@implementation NSDictionary (MXAddtion)
+@implementation NSDictionary (MXAddition)
 
 - (id)safeObjectForKey:(NSString *)key {
     id value = [self valueForKey:key];

@@ -1,5 +1,5 @@
 //
-//  NSString+MXAddtion.h
+//  NSString+MXAddition.h
 //  MXTTTXM
 //
 //  Created by Michael on 5/28/15.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (MXAddtion)
+@interface NSString (MXAddition)
 
 /**
  *  将JSON字符串转换成字典

@@ -1,5 +1,5 @@
 //
-//  UIImage+MXAddtion.h
+//  UIImage+MXAddition.h
 //  MXTTTXM
 //
 //  Created by Michael on 5/28/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (MXAddtion)
+@interface UIImage (MXAddition)
 
 /**
  *  使用颜色生成一张图片
