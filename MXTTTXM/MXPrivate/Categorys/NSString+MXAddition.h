@@ -17,11 +17,13 @@
  */
 - (NSDictionary *)MXJSONStringToDict;
 
-/**
- *  字符串md5加密
- *
- *  @return 加密后的字符串
- */
-- (NSString *)MXMD5;
+/** 字符串md5加密 */
+- (NSString *)md5;
+/** sha1加密 */
+- (NSString *)sha1;
+/** 判断是否是合法的邮箱号 */
+- (BOOL)isValidateEmail;
+/** 判断字符串是否有空格 */
+- (BOOL)hasSpaces;
 
 @end

@@ -20,4 +20,13 @@
  */
 + (NSArray *)match:(NSString *)string withRegex:(NSString *)regex;
 
+/** 获取当前版本号 */
++ (NSString *)getAppVersion;
+/** unicode码转中文 */
++ (NSString *)convertToChinese:(NSString *)unicodeStr;
+/** 获取手机类型 */
++ (NSString *)getPhoneMode;
+/** 获取当前时间，格式为yyyy-MM-dd HH:mm:ss */
++ (NSString *)getCurrentTime;
+
 @end

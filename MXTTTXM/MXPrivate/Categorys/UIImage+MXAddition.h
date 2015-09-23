@@ -19,4 +19,10 @@
  */
 + (UIImage *)imageWithhColor:(UIColor *)color;
 
+- (UIImage *)roundedCornerImageWithCornerRadius:(CGFloat)cornerRadius;
+
+- (UIImage *)scaleImage:(UIImage *)image toScale:(float)scaleSize;
+
+- (UIImage *)blurryImage:(UIImage *)image withBlurLevel:(CGFloat)blur;
+
 @end

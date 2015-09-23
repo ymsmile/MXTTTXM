@@ -28,7 +28,7 @@
     return dict;
 }
 
-- (NSString *)MXMD5 {
+- (NSString *)md5 {
     const char *cStr = [self UTF8String];
     unsigned char result[16];
     CC_MD5(cStr, (CC_LONG)strlen(cStr), result);
@@ -39,6 +39,37 @@
              result[8], result[9], result[10], result[11],
              result[12], result[13], result[14], result[15]
              ] lowercaseString];
+}
+
+- (NSString *)sha1 {
+    const char *cstr = [self cStringUsingEncoding:NSUTF8StringEncoding];
+    NSData *data = [NSData dataWithBytes:cstr length:self.length];
+    
+    uint8_t digest[CC_SHA1_DIGEST_LENGTH];
+    
+    CC_SHA1(data.bytes, data.length, digest);
+    
+    NSMutableString* output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
+    
+    for(int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++)
+        [output appendFormat:@"%02x", digest[i]];
+    
+    return output;
+}
+
+- (BOOL)isValidateEmail {
+    NSString *regex = @"\\b([a-zA-Z0-9%_.+\\-]+)@([a-zA-Z0-9.\\-]+?\\.[a-zA-Z]{2,6})\\b";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    return [predicate evaluateWithObject:self];
+}
+
+- (BOOL)hasSpaces {
+    NSRange range = [self rangeOfString:@" "];
+    if (range.location != NSNotFound) {
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 @end

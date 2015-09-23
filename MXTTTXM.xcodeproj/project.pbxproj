@@ -63,6 +63,9 @@
 		27B01B381B16FC2A00F76F35 /* MXConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B01B371B16FC2A00F76F35 /* MXConstants.m */; };
 		27B01B3D1B16FFD600F76F35 /* MXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B01B3C1B16FFD600F76F35 /* MXNavigationController.m */; };
 		27FEF4F31B2043E500779E7A /* NSObject+MXAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FEF4F21B2043E500779E7A /* NSObject+MXAddition.m */; };
+		4C82334E1BB2934700153346 /* CALayer+MXAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C82334D1BB2934700153346 /* CALayer+MXAddition.m */; settings = {ASSET_TAGS = (); }; };
+		4C8233531BB2947900153346 /* UIBarButtonItem+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8233501BB2947900153346 /* UIBarButtonItem+Badge.m */; settings = {ASSET_TAGS = (); }; };
+		4C8233541BB2947900153346 /* UIButton+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8233521BB2947900153346 /* UIButton+Badge.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +174,12 @@
 		27B01B3C1B16FFD600F76F35 /* MXNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXNavigationController.m; sourceTree = "<group>"; };
 		27FEF4F11B2043E500779E7A /* NSObject+MXAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MXAddition.h"; sourceTree = "<group>"; };
 		27FEF4F21B2043E500779E7A /* NSObject+MXAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MXAddition.m"; sourceTree = "<group>"; };
+		4C82334C1BB2934700153346 /* CALayer+MXAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+MXAddition.h"; sourceTree = "<group>"; };
+		4C82334D1BB2934700153346 /* CALayer+MXAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+MXAddition.m"; sourceTree = "<group>"; };
+		4C82334F1BB2947900153346 /* UIBarButtonItem+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Badge.h"; sourceTree = "<group>"; };
+		4C8233501BB2947900153346 /* UIBarButtonItem+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Badge.m"; sourceTree = "<group>"; };
+		4C8233511BB2947900153346 /* UIButton+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Badge.h"; sourceTree = "<group>"; };
+		4C8233521BB2947900153346 /* UIButton+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Badge.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,8 +339,14 @@
 		27B01ACA1B16F65000F76F35 /* Categorys */ = {
 			isa = PBXGroup;
 			children = (
+				4C82334F1BB2947900153346 /* UIBarButtonItem+Badge.h */,
+				4C8233501BB2947900153346 /* UIBarButtonItem+Badge.m */,
+				4C8233511BB2947900153346 /* UIButton+Badge.h */,
+				4C8233521BB2947900153346 /* UIButton+Badge.m */,
 				27B01ACB1B16F65000F76F35 /* NSArray+MXAddition.h */,
 				27B01ACC1B16F65000F76F35 /* NSArray+MXAddition.m */,
+				4C82334C1BB2934700153346 /* CALayer+MXAddition.h */,
+				4C82334D1BB2934700153346 /* CALayer+MXAddition.m */,
 				27B01ACD1B16F65000F76F35 /* NSData+MXAddition.h */,
 				27B01ACE1B16F65000F76F35 /* NSData+MXAddition.m */,
 				27B01ACF1B16F65000F76F35 /* NSDictionary+MXAddition.h */,
@@ -573,6 +588,7 @@
 				27B01B171B16F65000F76F35 /* UIImage+MXAddition.m in Sources */,
 				27B01B321B16FB7C00F76F35 /* MXTools.m in Sources */,
 				27B01B111B16F65000F76F35 /* TestModel.m in Sources */,
+				4C82334E1BB2934700153346 /* CALayer+MXAddition.m in Sources */,
 				27B01B101B16F65000F76F35 /* RichLabelViewController.m in Sources */,
 				27B01B131B16F65000F76F35 /* NSData+MXAddition.m in Sources */,
 				27B01B221B16F65000F76F35 /* MXRefreshView.m in Sources */,
@@ -585,12 +601,14 @@
 				27B01A8A1B16F60800F76F35 /* ViewController.m in Sources */,
 				27B01A871B16F60800F76F35 /* AppDelegate.m in Sources */,
 				27B01B251B16F65000F76F35 /* M80AttributedLabelAttachment.m in Sources */,
+				4C8233541BB2947900153346 /* UIButton+Badge.m in Sources */,
 				27B01B211B16F65000F76F35 /* MXPromptHUD.m in Sources */,
 				27B01B351B16FBA300F76F35 /* MXTouchID.m in Sources */,
 				27B01B121B16F65000F76F35 /* NSArray+MXAddition.m in Sources */,
 				27B01B181B16F65000F76F35 /* UIView+MXAddition.m in Sources */,
 				27B01B381B16FC2A00F76F35 /* MXConstants.m in Sources */,
 				27B01B3D1B16FFD600F76F35 /* MXNavigationController.m in Sources */,
+				4C8233531BB2947900153346 /* UIBarButtonItem+Badge.m in Sources */,
 				27B01B241B16F65000F76F35 /* M80AttributedLabel.m in Sources */,
 				27B01AFC1B16F65000F76F35 /* CalendarViewController.m in Sources */,
 				27B01B151B16F65000F76F35 /* NSString+MXAddition.m in Sources */,
