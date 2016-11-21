@@ -26,7 +26,7 @@
 + (NSString *)convertToChinese:(NSString *)unicodeStr;
 /** 获取手机类型 */
 + (NSString *)getPhoneMode;
-/** 获取当前时间，格式为yyyy-MM-dd HH:mm:ss */
-+ (NSString *)getCurrentTime;
+/** 判断是否是主线程：http://www.jianshu.com/p/d15f4b37b0f2 */
++ (BOOL)isMainQueue;
 
 @end

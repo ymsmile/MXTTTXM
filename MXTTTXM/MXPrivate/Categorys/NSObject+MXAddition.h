@@ -10,6 +10,9 @@
 
 @interface NSObject (MXAddition)
 
++ (BOOL)mx_swizzleMethod:(SEL)origSel withMethod:(SEL)altSel;
++ (BOOL)mx_swizzleClassMethod:(SEL)origSel withMethod:(SEL)altSel;
+
 /**
  *  判断一个对象是否是空的；支持判断数组和字典为空
  *

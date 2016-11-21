@@ -22,7 +22,6 @@
     for (NSTextCheckingResult *match in matchResults) {
         NSRange matchRange = [match range];
         tmpStr = [string substringWithRange:matchRange];
-//        NSLog(@"=%@=", tmpStr);
         [matchs addObject:tmpStr];
     }
     return matchs;
@@ -54,11 +53,16 @@
     return str;
 }
 
-+ (NSString *)getCurrentTime {
-    NSDate *nowUTC = [NSDate date];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    return [dateFormatter stringFromDate:nowUTC];
++ (BOOL)isMainQueue {
+    static const void* mainQueueKey = @"mainQueue";
+    static void* mainQueueContext = @"mainQueue";
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        dispatch_queue_set_specific(dispatch_get_main_queue(), mainQueueKey, mainQueueContext, nil);
+    });
+    
+    return dispatch_get_specific(mainQueueKey) == mainQueueContext;
 }
 
 @end

@@ -9,26 +9,16 @@
 #import "NSString+MXAddition.h"
 #import <CommonCrypto/CommonDigest.h>
 
+static char base64EncodingTable[64] = {
+    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
+    'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f',
+    'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
+    'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'
+};
+
 @implementation NSString (MXAddition)
 
-- (NSDictionary *)MXJSONStringToDict {
-    if (self == nil) {
-        return nil;
-    }
-    
-    NSData *jsonData = [self dataUsingEncoding:NSUTF8StringEncoding];
-    NSError *error;
-    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                        options:NSJSONReadingMutableContainers
-                                                          error:&error];
-    if(error) {
-        NSLog(@"%s--Parse failed：%@", __PRETTY_FUNCTION__, error);
-        return nil;
-    }
-    return dict;
-}
-
-- (NSString *)md5 {
+- (NSString *)mx_md5 {
     const char *cStr = [self UTF8String];
     unsigned char result[16];
     CC_MD5(cStr, (CC_LONG)strlen(cStr), result);
@@ -41,35 +31,173 @@
              ] lowercaseString];
 }
 
-- (NSString *)sha1 {
-    const char *cstr = [self cStringUsingEncoding:NSUTF8StringEncoding];
-    NSData *data = [NSData dataWithBytes:cstr length:self.length];
-    
-    uint8_t digest[CC_SHA1_DIGEST_LENGTH];
-    
-    CC_SHA1(data.bytes, data.length, digest);
-    
-    NSMutableString* output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
-    
-    for(int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++)
-        [output appendFormat:@"%02x", digest[i]];
-    
-    return output;
+- (int)mx_bytesCount {
+    int strlength = 0;
+    char *p = (char *)[self cStringUsingEncoding:NSUnicodeStringEncoding];
+    for (int i = 0; i < [self lengthOfBytesUsingEncoding:NSUnicodeStringEncoding]; i++) {
+        if (*p) {
+            p++;
+            strlength++;
+        } else {
+            p++;
+        }
+    }
+    return strlength;
 }
 
-- (BOOL)isValidateEmail {
+- (NSArray *)mx_findUrls {
+    if (self.length == 0) {
+        return nil;
+    }
+    
+    NSError *error;
+    NSString *regulaStr = @"((http|ftp|https)://)(([a-zA-Z0-9\\._-]+\\.[a-zA-Z]{2,6})|([0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}))(:[0-9]{1,4})*(/[a-zA-Z0-9\\&%_\\./-~-]*)?";
+    //    NSString *regulaStr = @"((http[s]{0,1}|ftp)://[a-zA-Z0-9\\.\\-]+\\.([a-zA-Z]{2,4})(:\\d+)?(/[a-zA-Z0-9\\.\\-~!@#$%^&*+?:_/=<>]*)?)|(www.[a-zA-Z0-9\\.\\-]+\\.([a-zA-Z]{2,4})(:\\d+)?(/[a-zA-Z0-9\\.\\-~!@#$%^&*+?:_/=<>]*)?)";
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regulaStr
+                                                                           options:NSRegularExpressionCaseInsensitive
+                                                                             error:&error];
+    NSArray *arrayOfAllMatches = [regex matchesInString:self options:0 range:NSMakeRange(0, [self length])];
+    
+    NSMutableArray *arr = [NSMutableArray array];
+    for (NSTextCheckingResult *match in arrayOfAllMatches) {
+        NSString *substringForMatch = [self substringWithRange:match.range];
+        [arr addObject:substringForMatch];
+    }
+    
+    return [arr copy];
+}
+
+- (BOOL)mx_isUrl {
+    if (self.length == 0) {
+        return NO;
+    }
+    NSString *regex = @"((http|ftp|https)://)(([a-zA-Z0-9\\._-]+\\.[a-zA-Z]{2,6})|([0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}))(:[0-9]{1,4})*(/[a-zA-Z0-9\\&%_\\./-~-]*)?";
+    //    NSString *regex = @"((http[s]{0,1}|ftp)://[a-zA-Z0-9\\.\\-]+\\.([a-zA-Z]{2,4})(:\\d+)?(/[a-zA-Z0-9\\.\\-~!@#$%^&*+?:_/=<>]*)?)|(www.[a-zA-Z0-9\\.\\-]+\\.([a-zA-Z]{2,4})(:\\d+)?(/[a-zA-Z0-9\\.\\-~!@#$%^&*+?:_/=<>]*)?)";
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    return [pred evaluateWithObject:self];
+}
+
+- (BOOL)mx_isEmail {
     NSString *regex = @"\\b([a-zA-Z0-9%_.+\\-]+)@([a-zA-Z0-9.\\-]+?\\.[a-zA-Z]{2,6})\\b";
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
     return [predicate evaluateWithObject:self];
 }
 
-- (BOOL)hasSpaces {
+- (BOOL)mx_hasSpace {
     NSRange range = [self rangeOfString:@" "];
     if (range.location != NSNotFound) {
         return YES;
     } else {
         return NO;
     }
+}
+
+- (BOOL)mx_isAllSpace {
+    if (!self) {
+        return YES;
+    } else {
+        //A character set containing only the whitespace characters space (U+0020) and tab (U+0009) and the newline and nextline characters (U+000A–U+000D, U+0085).
+        NSCharacterSet *set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+        
+        //Returns a new string made by removing from both ends of the receiver characters contained in a given character set.
+        NSString *trimedString = [self stringByTrimmingCharactersInSet:set];
+        
+        if ([trimedString length] == 0) {
+            return YES;
+        } else {
+            return NO;
+        }
+    }
+}
+
+- (BOOL)mx_isPureDigit {
+    NSScanner *scan = [NSScanner scannerWithString:self];
+    int val;
+    return [scan scanInt:&val] && [scan isAtEnd];
+}
+
+- (NSString *)mx_urlDecode {
+    NSString *decodedString = (__bridge_transfer NSString *)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL,
+                                                                                                                     (__bridge CFStringRef)self,
+                                                                                                                     CFSTR(""),
+                                                                                                                     CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
+    return decodedString;
+}
+
+- (NSNumber *)mx_covertToNumber {
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    NSNumber *tmpNum = [formatter numberFromString:self];
+    
+    return tmpNum;
+}
+
+- (NSDictionary *)mx_covertToDictionary {
+    if (self == nil) {
+        return nil;
+    }
+    
+    NSData *jsonData = [self dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error;
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                         options:NSJSONReadingMutableContainers
+                                                           error:&error];
+    if (error) {
+#if DEBUG
+        NSLog(@"%s--Parse failed：%@", __PRETTY_FUNCTION__, error);
+        return nil;
+#endif
+    }
+    return dict;
+}
+
+- (NSArray *)mx_covertToArray {
+    if (self == nil) {
+        return nil;
+    }
+    
+    NSData *jsonData = [self dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error;
+    NSArray *arr = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                   options:NSJSONReadingMutableContainers
+                                                     error:&error];
+    if (error) {
+#if DEBUG
+        NSLog(@"%s--Parse failed：%@", __PRETTY_FUNCTION__, error);
+#endif
+        return nil;
+    }
+    return arr;
+}
+
+- (NSString *)mx_subStringWithByteCount:(NSInteger)byteCount {
+    NSInteger sum = 0;
+    NSString *subStr = [[NSString alloc] init];
+    for(int i = 0; i < [self length]; i++) {
+        unichar strChar = [self characterAtIndex:i];
+        if(strChar < 256) {
+            sum += 1;
+        } else {
+            sum += 2;
+        }
+        if (sum >= byteCount) {
+            subStr = [self substringToIndex:i+1];
+            return subStr;
+        }
+    }
+    if (subStr.length > 0) {
+        return subStr;
+    } else {
+        return self;
+    }
+}
+
++ (NSString *)mx_randomStringWithLength:(NSInteger)length {
+    NSMutableString *randomString = [NSMutableString stringWithCapacity:length];
+    NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    for (NSInteger i = 0; i < length; i++) {
+        [randomString appendFormat:@"%c", [letters characterAtIndex:arc4random_uniform((int)[letters length])]];
+    }
+    return randomString;
 }
 
 @end

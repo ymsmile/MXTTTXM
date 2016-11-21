@@ -11,10 +11,10 @@
 @interface NSData (MXAddition)
 
 /**
- *  NSData-->NSDictionary
+ *  NSData转换为NSDictionary
  *
- *  @return NSDictionary对象
+ *  @return 字典
  */
-- (NSDictionary *)MXDataToDict;
+- (NSDictionary *)mx_covertToDictionary;
 
 @end

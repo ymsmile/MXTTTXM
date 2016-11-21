@@ -26,4 +26,6 @@
  */
 - (BOOL)hasSameContents:(NSArray *)array;
 
+- (BOOL)mx_containNSNumberObject:(NSNumber *)obj;
+
 @end

@@ -10,13 +10,15 @@
 
 @implementation NSData (MXAddition)
 
-- (NSDictionary *)MXDataToDict {
+- (NSDictionary *)mx_covertToDictionary {
     NSError *parseError = nil;
     id value = [NSJSONSerialization JSONObjectWithData:self options:NSJSONReadingMutableContainers error:&parseError];
     
     if (parseError) {
+#if DEBUG
         NSLog(@"%s--Parse failed：%@", __PRETTY_FUNCTION__, parseError);
         return nil;
+#endif
     }
     
     if (value && [value isKindOfClass:[NSDictionary class]]) {
