@@ -62,7 +62,7 @@
  */
 - (NSString *)mx_urlDecode;
 
-- (NSString *)mx_convertToChinese;
+//- (NSString *)mx_convertToChinese;
 
 /**
  *  数字字符串转换成NSNumber类型

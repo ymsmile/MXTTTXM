@@ -1,9 +1,9 @@
 //
 //  NSDate+MXAddition.m
-//  PretendLover
+//  MXTTTXM
 //
 //  Created by Michael on 1/11/16.
-//  Copyright © 2016年 Duidui Technology Co., Ltd. All rights reserved.
+//  Copyright © 2016年 MXTTTXM UPUPUP. All rights reserved.
 //
 
 #import "NSDate+MXAddition.h"

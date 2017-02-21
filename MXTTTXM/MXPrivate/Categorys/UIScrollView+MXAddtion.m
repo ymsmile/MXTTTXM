@@ -1,9 +1,9 @@
 //
 //  UIScrollView+MXAddtion.m
-//  PretendLover
+//  MXTTTXM
 //
 //  Created by Michael on 16/9/13.
-//  Copyright © 2016年 Duidui Technology Co., Ltd. All rights reserved.
+//  Copyright © 2016年 MXTTTXM UPUPUP. All rights reserved.
 //
 
 #import "UIScrollView+MXAddtion.h"
