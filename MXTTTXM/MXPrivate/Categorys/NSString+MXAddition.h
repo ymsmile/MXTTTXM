@@ -28,37 +28,31 @@
 
 /**
  *  判断字符串是否是合法的网址
- *
  */
 - (BOOL)mx_isUrl;
 
 /**
  *  判断是否是合法的邮箱
- *
  */
 - (BOOL)mx_isEmail;
 
 /**
  *  判断字符串是否有空格
- *
  */
 - (BOOL)mx_hasSpace;
 
 /**
  *  判断字符串是否全部为空格
- *
  */
 - (BOOL)mx_isAllSpace;
 
 /**
  *  判断字符串是否是纯数字
- *
  */
 - (BOOL)mx_isPureDigit;
 
 /**
  *  url解码
- *
  */
 - (NSString *)mx_urlDecode;
 
@@ -72,16 +66,12 @@
 
 /**
  *  将JSON字符串转换成字典
- *
- *  @return 字典
  */
 
 - (NSDictionary *)mx_covertToDictionary;
 
 /**
  *  将JSON字符串转换成数组
- *
- *  @return 数组
  */
 - (NSArray *)mx_covertToArray;
 
@@ -99,7 +89,6 @@
  *
  *  @param Length 字符串长度
  *
- *  @return NSString
  */
 + (NSString *)mx_randomStringWithLength:(NSInteger)length;
 

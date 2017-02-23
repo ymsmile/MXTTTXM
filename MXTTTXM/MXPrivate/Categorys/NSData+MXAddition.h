@@ -12,8 +12,6 @@
 
 /**
  *  NSData转换为NSDictionary
- *
- *  @return 字典
  */
 - (NSDictionary *)mx_covertToDictionary;
 

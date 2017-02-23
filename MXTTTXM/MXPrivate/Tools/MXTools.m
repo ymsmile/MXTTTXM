@@ -65,4 +65,51 @@
     return dispatch_get_specific(mainQueueKey) == mainQueueContext;
 }
 
++ (NSString *)getIPAddress {
+    // http://superdanny.link/2016/01/27/iOS-get-device-ip-address/
+    NSURL *ipURL = [NSURL URLWithString:@"http://ipof.in/txt"];
+    NSString *ip = [NSString stringWithContentsOfURL:ipURL encoding:NSUTF8StringEncoding error:NULL];
+    return ip;
+}
+
++ (NSString *)calculateThousandForInteger:(NSInteger)num {
+    if (num < 1000) {
+        return [NSString stringWithFormat:@"%@", @(num)];
+    } else {
+        NSInteger qian = num / 1000;
+        NSInteger qian_yu = num % 1000;
+        NSInteger bai = 0;
+        NSInteger shi = 0;
+        NSInteger bai_yu = 0;
+        if (qian_yu > 100) {
+            bai = qian_yu / 100;
+            bai_yu = qian_yu % 100;
+            if (bai_yu > 10) {
+                shi = bai_yu / 10;
+            }
+        }
+        if (bai == 0) {
+            if (shi >= 5) {
+                return [NSString stringWithFormat:@"%@.1k", @(qian)];
+            } else {
+                return [NSString stringWithFormat:@"%@k", @(qian)];
+            }
+        }
+        else if (bai == 9) {
+            if (shi >= 5) {
+                return [NSString stringWithFormat:@"%@k", @(qian+1)];
+            } else {
+                return [NSString stringWithFormat:@"%@.%@k", @(qian), @(bai)];
+            }
+        }
+        else {
+            if (shi >= 5) {
+                return [NSString stringWithFormat:@"%@.%@k", @(qian), @(bai+1)];
+            } else {
+                return [NSString stringWithFormat:@"%@.%@k", @(qian), @(bai)];
+            }
+        }
+    }
+}
+
 @end
