@@ -11,6 +11,11 @@
 @interface MXTools : NSObject
 
 /**
+ *  获取当前时间字符串，格式为yyyy-MM-dd HH:mm:ss
+ */
++ (NSString *)getCurrentTime;
+
+/**
  *  利用正则表达式找出匹配的内容
  *
  *  @param string 被匹配的字符串
@@ -21,19 +26,24 @@
 + (NSArray *)match:(NSString *)string withRegex:(NSString *)regex;
 
 /**
- *  获取当前版本号
+ *  获取当前版本号，如2.6.0
  */
 + (NSString *)getAppVersion;
-
-/**
- *  unicode码转中文
- */
-+ (NSString *)convertToChinese:(NSString *)unicodeStr;
 
 /**
  *  获取手机类型，iPhone6、iPhone6s等等
  */
 + (NSString *)getPhoneMode;
+
+/**
+ *  获取Document路径
+ */
++ (NSString *)getDocPath;
+
+/**
+ *  unicode码转中文
+ */
++ (NSString *)convertToChinese:(NSString *)unicodeStr;
 
 /**
  *  判断是否是主线程：http://www.jianshu.com/p/d15f4b37b0f2

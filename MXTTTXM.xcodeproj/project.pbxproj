@@ -65,6 +65,7 @@
 		27FEF4F31B2043E500779E7A /* NSObject+MXAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FEF4F21B2043E500779E7A /* NSObject+MXAddition.m */; };
 		4C096BAB1DE29EED00C25951 /* UIScrollView+MXAddtion.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C096BAA1DE29EED00C25951 /* UIScrollView+MXAddtion.m */; };
 		4C096BAE1DE29F8100C25951 /* NSDate+MXAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C096BAD1DE29F8100C25951 /* NSDate+MXAddition.m */; };
+		4C5EEA2020ABE078009ADFFD /* UILabel+Copy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5EEA1F20ABE078009ADFFD /* UILabel+Copy.m */; };
 		4C82334E1BB2934700153346 /* CALayer+MXAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C82334D1BB2934700153346 /* CALayer+MXAddition.m */; };
 		4C8233531BB2947900153346 /* UIBarButtonItem+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8233501BB2947900153346 /* UIBarButtonItem+Badge.m */; };
 		4C8233541BB2947900153346 /* UIButton+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8233521BB2947900153346 /* UIButton+Badge.m */; };
@@ -180,6 +181,8 @@
 		4C096BAA1DE29EED00C25951 /* UIScrollView+MXAddtion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MXAddtion.m"; sourceTree = "<group>"; };
 		4C096BAC1DE29F8100C25951 /* NSDate+MXAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+MXAddition.h"; sourceTree = "<group>"; };
 		4C096BAD1DE29F8100C25951 /* NSDate+MXAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+MXAddition.m"; sourceTree = "<group>"; };
+		4C5EEA1E20ABE078009ADFFD /* UILabel+Copy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Copy.h"; sourceTree = "<group>"; };
+		4C5EEA1F20ABE078009ADFFD /* UILabel+Copy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Copy.m"; sourceTree = "<group>"; };
 		4C82334C1BB2934700153346 /* CALayer+MXAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+MXAddition.h"; sourceTree = "<group>"; };
 		4C82334D1BB2934700153346 /* CALayer+MXAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+MXAddition.m"; sourceTree = "<group>"; };
 		4C82334F1BB2947900153346 /* UIBarButtonItem+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Badge.h"; sourceTree = "<group>"; };
@@ -471,6 +474,8 @@
 				4C8233501BB2947900153346 /* UIBarButtonItem+Badge.m */,
 				4C8233511BB2947900153346 /* UIButton+Badge.h */,
 				4C8233521BB2947900153346 /* UIButton+Badge.m */,
+				4C5EEA1E20ABE078009ADFFD /* UILabel+Copy.h */,
+				4C5EEA1F20ABE078009ADFFD /* UILabel+Copy.m */,
 				27B01AD31B16F65000F76F35 /* UIDevice+Hardware.h */,
 				27B01AD41B16F65000F76F35 /* UIDevice+Hardware.m */,
 			);
@@ -521,11 +526,12 @@
 		27B01A761B16F60800F76F35 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "DianHu Digital Technology";
 				TargetAttributes = {
 					27B01A7D1B16F60800F76F35 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = XLB59ZJ4L6;
 					};
 					27B01A961B16F60800F76F35 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -602,6 +608,7 @@
 				27B01B021B16F65000F76F35 /* RefreshViewController.m in Sources */,
 				27B01B191B16F65000F76F35 /* MXActionSheet.m in Sources */,
 				27FEF4F31B2043E500779E7A /* NSObject+MXAddition.m in Sources */,
+				4C5EEA2020ABE078009ADFFD /* UILabel+Copy.m in Sources */,
 				27B01B201B16F65000F76F35 /* NSDate+WQCalendarLogic.m in Sources */,
 				27B01B171B16F65000F76F35 /* UIImage+MXAddition.m in Sources */,
 				27B01B321B16FB7C00F76F35 /* MXTools.m in Sources */,
@@ -675,14 +682,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -723,14 +738,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -762,6 +785,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = XLB59ZJ4L6;
 				GCC_PREFIX_HEADER = "MXTTTXM/MXPrivate/MXTTTXM-Prefix.pch";
 				INFOPLIST_FILE = MXTTTXM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -777,6 +801,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = XLB59ZJ4L6;
 				GCC_PREFIX_HEADER = "MXTTTXM/MXPrivate/MXTTTXM-Prefix.pch";
 				INFOPLIST_FILE = MXTTTXM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

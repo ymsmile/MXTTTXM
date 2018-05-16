@@ -11,6 +11,13 @@
 
 @implementation MXTools
 
++ (NSString *)getCurrentTime {
+    NSDate *nowUTC = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    return [dateFormatter stringFromDate:nowUTC];
+}
+
 + (NSArray *)match:(NSString *)string withRegex:(NSString *)regex {
     NSError *error;
     NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:regex
@@ -32,6 +39,17 @@
     return v;
 }
 
++ (NSString *)getPhoneMode {
+    NSString *str = [[UIDevice currentDevice] hardwareTypeString];
+    str = [str stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+    
+    return str;
+}
+
++ (NSString *)getDocPath {
+    return [[[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject] path];
+}
+
 + (NSString *)convertToChinese:(NSString *)unicodeStr {
     if (!unicodeStr)
         return @"can not convert!";
@@ -44,13 +62,6 @@
                                                                      format:NULL
                                                            errorDescription:NULL];
     return [returnStr stringByReplacingOccurrencesOfString:@"\\r\\n"withString:@"\n"];
-}
-
-+ (NSString *)getPhoneMode {
-    NSString *str = [[UIDevice currentDevice] hardwareSimpleDescription];
-    str = [str stringByReplacingOccurrencesOfString:@" " withString:@"_"];
-    
-    return str;
 }
 
 + (BOOL)isMainQueue {

@@ -193,4 +193,18 @@
     return randomString;
 }
 
+- (CGSize)mx_sizeWithFont:(UIFont *)font constrainedToSize:(CGSize)constrainedSize {
+    if (!self) {
+        return CGSizeZero;
+    }
+    
+    NSMutableAttributedString *contentAttributedString = [[NSMutableAttributedString alloc] initWithString:self];
+    [contentAttributedString addAttributes:@{NSFontAttributeName : font}
+                                     range:NSMakeRange(0, self.length)];
+    CGSize contentSize = [contentAttributedString boundingRectWithSize:constrainedSize
+                                                               options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin
+                                                               context:nil].size;
+    return contentSize;
+}
+
 @end

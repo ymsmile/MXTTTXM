@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface NSString (MXAddition)
 
+/**
+ *  字符串md5加密
+ */
 - (NSString *)mx_md5;
 
 /**
@@ -91,5 +95,12 @@
  *
  */
 + (NSString *)mx_randomStringWithLength:(NSInteger)length;
+
+/**
+ *  获取字符串的size
+ */
+- (CGSize)mx_sizeWithFont:(UIFont *)font constrainedToSize:(CGSize)constrainedSize;
+
+
 
 @end
