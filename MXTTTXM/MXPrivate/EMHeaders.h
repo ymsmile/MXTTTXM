@@ -14,7 +14,7 @@
 #import "NSData+MXAddition.h"
 #import "NSDictionary+MXAddition.h"
 #import "NSString+MXAddition.h"
-#import "UIDevice+Hardware.h"
+#import "UIDevice+MXAddition.h"
 #import "UIImage+MXAddition.h"
 #import "UIView+MXAddition.h"
 

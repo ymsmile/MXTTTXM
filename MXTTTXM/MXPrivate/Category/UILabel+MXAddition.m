@@ -6,11 +6,11 @@
 //  Copyright © 2017年 Tianlin Inc. All rights reserved.
 //
 
-#import "UILabel+Copy.h"
+#import "UILabel+MXAddition.h"
 
 #import <objc/runtime.h>
 
-@implementation UILabel (Copy)
+@implementation UILabel (MXAddition)
 
 - (BOOL)canBecomeFirstResponder {
     BOOL isCopy = [objc_getAssociatedObject(self, @selector(isCopyable)) boolValue];

@@ -6,12 +6,12 @@
 //  Copyright © 2017年 Tianlin Inc. All rights reserved.
 //
 
-#import "UIDevice+Hardware.h"
+#import "UIDevice+MXAddition.h"
 
 #include <sys/types.h>
 #include <sys/sysctl.h>
 
-@implementation UIDevice (Hardware)
+@implementation UIDevice (MXAddition)
 
 - (NSString *)hardwareModeID {
     int name[] = {CTL_HW,HW_MACHINE};

@@ -96,7 +96,7 @@ typedef NS_ENUM(NSUInteger, Hardware) {
     SIMULATOR
 };
 
-@interface UIDevice (Hardware)
+@interface UIDevice (MXAddition)
 
 /** 型号，如iPhone9,1 */
 - (NSString *)hardwareModeID;
